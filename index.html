@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="title" content="SPEAK">
+    <meta name="description" content="SPEAK is EEG based Speech Synthesize for Speech Impairments">
+    <meta name="keywords" content="speak, emotions, direction, binary decision, satisfaction">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon -->
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- favicon -->
+
+
+    <title>SPEAK</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/7e5658b08b.js" crossorigin="anonymous"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="CSS/HomeStyles.css">
+    <link rel="stylesheet" href="CSS/ParallaxCarousel.css">
+    <!-- Custom Styles -->
+    <!-- Animate On  Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Animate On  Scroll -->
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="JS/bulmaScripsts.js"></script>
+    <!-- Toaster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+
+<body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Contact US -->
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content mx-4">
+            <main class="container content notification is-warning">
+                <h1 class="title has-text-centered">Your Feedback is Important to US</h1>
+                <form method="post" action="#">
+                    <div class="field">
+                        <label class="label" for="the_name">Your Name</label>
+                        <input type="text" name="name" id="the_name" class="input">
+                    </div>
+                    <div class="field">
+                        <label class="label" for="the_email">Email
+                     Address</label>
+                        <input type="email" name="email" id="the_email" class="input">
+                    </div>
+                    <div class="field">
+                        <label class="label" for="the_subject">Subject</label>
+                        <input type="text" name="name" id="the_subject" class="input">
+                    </div>
+                    <div class="field">
+                        <label class="label" for="the_message">Message</label>
+                        <textarea name="message" id="the_message" class="textarea"></textarea>
+                    </div>
+                    <div class="field">
+                        <input type="button" id="modal-submit" class="button
+                        is-success
+                        is-fullwidth" value="Submit">
+                    </div>
+                    <div class="field">
+                        <input id="modal-cancel" type="button" class="button
+                        is-danger
+                        is-fullwidth" value="Cancel">
+                    </div>
+                </form>
+            </main>
+        </div>
+        <button class="modal-close"></button>
+    </div>
+    <!-- Nav bar -->
+    <nav class="navbar is-fixed-top is-transparent">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="images/Logo.jpeg" width={50} height={50} /> SPEAK
+            </a>
+            <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="#home">
+               Home
+               </a>
+                <a class="navbar-item" href="#intro">
+               Introduction
+               </a>
+                <a class="navbar-item" href="#domain">
+               Domain
+               </a>
+                <a class="navbar-item" href="#milestones">
+               Milestones
+               </a>
+                <a class="navbar-item" href="#features">
+               Features
+               </a>
+                <a class="navbar-item" href="#documents">
+               Documents
+               </a>
+                <a class="navbar-item" href="#tools">
+               Tools & Technologies
+               </a>
+                <a class="navbar-item" href="#team">
+               Team
+               </a>
+            </div>
+            <div class="navbar-end">
+                <a href="javascript:;" id="showModal" class="navbar-item">
+               Contact Us
+               </a>
+            </div>
+        </div>
+    </nav>
+    <!-- <div class="parallax-home">
+         </div> -->
+    <section id="home">
+        <div id="firstPage" class="parallax">
+            <div class="parallax-container-home" style="min-height:100vh;">
+                <section class="hero is-fullheight">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 data-aos="fade-down" class="title
+                           has-text-white
+                           center">SPEAK </h1>
+                            <br />
+                            <br />
+                            <h1 data-aos="fade-up" class="title
+                           has-text-white
+                           has-text-centered" style="line-height:150%;">EEG BASED VIRTUAL ASSISTANT FOR SPEECH IMPAIRMENTS</h1>
+                            <br>
+                            <h1 data-aos="fade-up" class="subtitle
+                           has-text-white
+                           has-text-centered" style="line-height:200%;">- Sail Towards Success -</h1>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="parallax feature-background">
+        </div>
+    </section>
+    <!-- Home -->
+    <!-- Introduction -->
+    <section id="intro" class="hero is-fullheight
+         backgroud-intro">
+        <div class="hero-body">
+            <div class="container">
+                <h1 data-aos="fade-down" class="title
+                  has-text-white
+                  center">What is SPEAK? </h1>
+                <br />
+                <h2 data-aos="fade-up" class="subtitle center" style="color:#303030;font-weight:bold;">SPEAK is a user-friendly EEG based virtual assistant(mobile application) for Speech Impairments, </h2>
+                <br />
+                <h2 data-aos="fade-up" class="subtitle
+                  has-text-white
+                  has-text-centered" style="line-height:200%;">Verbal communication is essential to maintain the teacher-student relationship in the normal school learning system. There are cases where children who cannot speak due to accidents or various neurological disorders or genetic conditions, but who can hear, are studying in the normal school education system. In the face of these conditions, there is research on assistive devices based on brain-computer interface technology that can be used for communication, but there is difficulty in using such devices in practice due to the use of expensive equipment and the use of invasive brain-computer interface technology based on surgery for high precision. The primary objective in this study is to determine the ability to use electroencephalography signals with minimal cost and high accuracy for a non-speaking but hearing student to engage in verbal communication in the classroom using SPEAK mobile application.
+                </h2>
+            </div>
+        </div>
+    </section>
+    <section id="domain" class="domain-background">
+        <br><br>
+        <div class="container has-text-centered">
+            <h1 class="title has-text-white">
+                Our Domain
+            </h1>
+        </div>
+        <div data-aos="fade-up" class="tabs tabs is-centered
+            is-medium">
+            <div class="container">
+                <ul>
+                    <li class="tab is-active" onclick="openTab(event,'Background')"><a><span class="icon is-small"><i
+                     class="fas
+                     fa-image" aria-hidden="true"></i></span>
+                     <span>Background</span></a>
+                    </li>
+                    <li class="tab" onclick="openTab(event,'ResearchGap')"><a><span class="icon is-small"><i class="fas
+                     fa-image" aria-hidden="true"></i></span>
+                     <span>Research Gap</span></a>
+                    </li>
+                    <li class="tab" onclick="openTab(event,'ResearchProblems')"><a><span class="icon is-small"><i class="fas
+                     fa-image" aria-hidden="true"></i></span>
+                     <span>Research Problems</span></a>
+                    </li>
+                    <li class="tab" onclick="openTab(event,'ResearchObjectives')"><a><span class="icon is-small"><i
+                     class="fas
+                     fa-image" aria-hidden="true"></i></span>
+                     <span>Research Objectives</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div data-aos="fade-down" class="container section">
+            <div id="Background" class="content-tab">
+                <div class="container">
+                    <section class="hero is-primary
+                  tab-content">
+                        <div class="hero-body">
+                            <h1 class="title has-text-centered">Background</h1>
+                            <div class="container">
+                                <div class="notification
+                           is-light">
+                                    <p class="
+                              has-text-centered
+                              has-text-black">Verbal communication is essential to maintain the teacher-student relationship in the normal school learning system.
+                            There are cases where children who cannot speak due to accidents or various neurological disorders or genetic
+                            conditions, but who can hear, are studying in the normal school education system. In the face of these conditions, there
+                            is research on assistive devices based on brain-computer interface technology. In our Application generate a speech
+                            output to express the direction , answer binary decision question, express the satisfaction and also generate a speech
+                            output to express the emotions.
+                                    </p>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div id="ResearchGap" class="content-tab" style="display:none">
+                <div class="container">
+                    <section class="hero is-primary tab-content
+                  content-back">
+                        <div class="hero-body">
+                            <h1 class="title has-text-centered">Research Gap
+                            </h1>
+                            <div class="container center">
+                                <div class="notification">
+                                    <h1 class="has-text-black
+                              has-text-centered">Implement a Voice output for speaking disabled students to communicate in a class room. We used the low-cost MUSE2 headset and analyzed the data using our new framework, which monitors the paradigms of imagined speech and visual imagery in the alpha range</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div id="ResearchObjectives" class="content-tab" style="display:none">
+                <div class="container">
+                    <section class="hero is-primary
+                  content-back">
+                        <div class="hero-body">
+                            <h1 class="title has-text-centered">Research Objectives
+                            </h1>
+                            <div class="container center">
+                                <div>
+                                    <div class="columns">
+                                        <div class="column">
+                                            <div data-aos="flip-up" data-aos-duration="1000" class="notification
+                                    is-white
+                                    has-text-centered" style="height:
+                                    100%">
+                                                <p class="has-text-centered">Implement a Virtual assistant for speaking disabled students to communicate in a class room of age 16-19​.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="columns">
+                                        <div class="column
+                                 is-one-quarter">
+                                            <div data-aos="flip-right" data-aos-duration="1000" class="notification
+                                    is-white
+                                    has-text-centered" style="height:
+                                    100%">
+                                                <p class="has-text-centered">Create unique Interface to generate left,right, forward, Backward directions​
+                                                Design algorithm to reduce overtraining and dimensionality
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="column
+                                 is-one-quarter">
+                                            <div data-aos="flip-left" data-aos-duration="1000" class="notification
+                                    is-white
+                                    has-text-centered" style="height:
+                                    100%">
+                                                <p class="has-text-centered">EEG binary decision brain signal patterns to analyze choice.​
+                                                Classification of “Yes / No” choices.​
+                                                Responsive “Yes / No” speech sound output.​
+                                                Interface reaction feature.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="column
+                                 is-one-quarter">
+                                            <div data-aos="flip-right" data-aos-duration="1000" class="notification
+                                    is-white
+                                    has-text-centered" style="height:
+                                    100%">
+                                                <p class="has-text-centered">
+                                                    Generate a speech output to express the satisfaction​
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="column
+                                 is-one-quarter">
+                                            <div data-aos="flip-left" data-aos-duration="1000" class="notification
+                                    is-white
+                                    has-text-centered" style="height:
+                                    100%">
+                                                <p class="has-text-centered">Identify emotional signals of speaking impairments using EEG.​
+                                                Identify Emotional EEG signals can convert to voice.​
+                                                Identify the Emotions​
+                                                Spread speak impaired students’ emotional sounds to others
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div id="ResearchProblems" class="content-tab" style="display:none">
+                <div class="container">
+                    <section class="hero is-primary
+                  content-back">
+                        <div class="hero-body">
+                            <h1 class="title has-text-centered">Research Problems
+                            </h1>
+                            <div class="container center">
+                                <div>
+                                    <div class="columns">
+                                        <div class="column
+                                 is-one-quarter">
+                                            <div data-aos="flip-right" data-aos-duration="1000" class="notification
+                                    is-light
+                                    has-text-centered" style="height:
+                                    100%;">
+                                                <br />
+                                                <p class="has-text-centered">How to generate a speech sound based on direction analysis?​
+                                                How to overcome the overlapping signals with other components?
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="column
+                                 is-one-quarter">
+                                            <div data-aos="flip-left" data-aos-duration="1000" class="notification
+                                    is-light
+                                    has-text-centered" style="height:
+                                    100%;">
+                                                <br />
+                                                <p class="has-text-centered">What is producing speech sound of binary decision ?​
+                                                What is binary decision ?​
+                                                How to generate a speech sound based on the Binary decision analysis?
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="column
+                                 is-one-quarter">
+                                            <div data-aos="flip-right" data-aos-duration="1000" class="notification
+                                    is-light
+                                    has-text-centered" style="height:
+                                    100%;">
+                                                <br />
+                                                <p class="has-text-centered">
+                                                    What is producing speech sound of Satisfaction Rate?​
+                                                    What is Satisfaction Rate?
+                                                    How to generate a speech sound based on the Satisfaction Rate?
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="column
+                                 is-one-quarter">
+                                            <div data-aos="flip-left" data-aos-duration="1000" class="notification
+                                    is-light
+                                    has-text-centered" style="height:
+                                    100%;">
+                                                <br />
+                                                <p class="has-text-centered">What is producing speech sound of Emotional Analysis?​
+                                                What is Emotional Analysis?​
+                                                How to generate a speech sound based on the Emotional Analysis?​
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+    </section>
+    <section id="milestones" class="section
+         milestone-background">
+        <h1 class="title has-text-centered has-text-white">Milestones</h1>
+        <div class="container">
+            <div class="timeline">
+                <div>
+                    <div class="containerX left">
+                        <div data-aos="fade-down" class="box">
+                            <h2 class="title is-5
+                           has-text-centered">Project Topic Assessment
+                            </h2>
+                            <h2 class="title is-6
+                           has-text-centered">28th December 2021
+                            </h2>
+                            <p>The proposed research's first topic assessment paper was submitted for review. A brief summary of the main points of the
+                            proposed study, the research issue, the research goals, the overall solution, and a breakdown of the member tasks were
+                            all included in the paper that was submitted.
+                            </p>
+                            <ul>
+                                <li class="has-text-right"><strong>No
+                              marks allocated
+                              </strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="containerX right">
+                        <div data-aos="fade-up" class="box">
+                            <h2 class="title is-5
+                           has-text-centered">Project Charter Submission
+                            </h2>
+                            <h2 class="title is-6
+                           has-text-centered">12th January 2022
+                            </h2>
+                            <p>The project charter document was submitted for assessment after the subject was decided. This document also provided a short explanation of major features of the planned study, such as the research topic, research goals, overall solution,and member work division.
+                            </p>
+                            <ul>
+                                <li class="has-text-right"><strong>No
+                              marks allocated
+                              </strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="containerX left">
+                        <div data-aos="fade-down" class="box">
+                            <h2 class="title is-5
+                           has-text-centered">Project Proposal Presentation
+                            </h2>
+                            <h2 class="title is-6
+                           has-text-centered">3rd February 2022</h2>
+                            <p>A brief description of the planned study was presented to a panel of judges.
+                            </p>
+                            <ul>
+                                <li class="has-text-right"><strong>Marks
+                              Allocation - 6%</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="containerX right">
+                        <div data-aos="fade-up" class="box">
+                            <h2 class="title is-5
+                           has-text-centered">Project Proposal Report
+                            </h2>
+                            <h2 class="title is-6
+                           has-text-centered">24th January 2022</h2>
+                            <p>Submission of a report that gives an in-depth study of major features of the proposed research, as well as the research topic, goals, and overall suggested solution.
+                            </p>
+                            <ul>
+                                <li class="has-text-right"><strong>Marks
+                              Allocation - 6%</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="containerX left">
+                        <div data-aos="fade-down" class="box">
+                            <h2 class="title is-5
+                           has-text-centered">Status Document 1</h2>
+                            <h2 class="title is-6
+                           has-text-centered">13th May 2022
+                            </h2>
+                            <p>The submission of a document that offers an overview of significant activities completed by members throughout the research's implementation phase.
+                            </p>
+                            <ul>
+                                <li class="has-text-right"><strong>Marks
+                              Allocation - 1%</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+          
+                <div>
+                    <div class="containerX right">
+                        <div data-aos="fade-up" class="box">
+                            <h2 class="title is-5
+                           has-text-centered">Progress Presentation 1
+                            </h2>
+                            <h2 class="title is-6
+                           has-text-centered">13th May 2022
+                            </h2>
+                            <p>Evaluation of 50% completion of the proposed solution by a panel of judges.
+                            </p>
+                            <ul>
+                                <li class="has-text-right"><strong>Marks
+                              Allocation - 15%</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="containerX left">
+                        <div data-aos="fade-down" class="box">
+                            <h2 class="title is-5
+                           has-text-centered">Research Paper draft submission
+                            </h2>
+                            <h2 class="title is-6
+                           has-text-centered">30th June 2022
+                            </h2>
+                            <p>The supervisor received a draft submission of the research work for review.
+                            </p>
+                            <ul>
+                                <li class="has-text-right"><strong>Marks
+                              Allocation - 10%</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="containerX right">
+                        <div data-aos="fade-up" class="box">
+                            <h2 class="title is-5
+                           has-text-centered">Final Thesis Submission
+                            </h2>
+                            <h2 class="title is-6
+                           has-text-centered">9th September 2022</h2>
+                            <p>Submission of the group and individual thesis documents for evaluation.
+                            </p>
+                            <ul>
+                                <li class="has-text-right"><strong>Marks
+                              Allocation - 19%</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="containerX left">
+                        <div data-aos="fade-down" class="box">
+                            <h2 class="title is-5
+                           has-text-centered">Progress Presentation 2
+                            </h2>
+                            <h2 class="title is-6
+                           has-text-centered">12th October 2022</h2>
+                            <p>Evaluation of 90% completion of the proposed solution by a panel of judges.
+                            </p>
+                            <ul>
+                                <li class="has-text-right"><strong>Marks
+                              Allocation - 18%</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="containerX right">
+                        <div data-aos="fade-up" class="box">
+                            <h2 class="title is-5
+                           has-text-centered">Website Assessment
+                            </h2>
+                            <h2 class="title is-6
+                           has-text-centered">14th November 2022
+                            </h2>
+                            <p>Submission of research website for evaluation.
+                            </p>
+                            <ul>
+                                <li class="has-text-right"><strong>Marks
+                              Allocation - 2%</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="containerX left">
+                        <div data-aos="fade-down" class="box">
+                            <h2 class="title is-5
+                           has-text-centered">14th November 2022
+                            </h2>
+                            <h2 class="title is-6
+                           has-text-centered">November, 2020
+                            </h2>
+                            <p>Submission of the research logbook and status document 2, which offers a summary of all major tasks performed by members throughout the study's implementation phase.
+                            </p>
+                            <ul>
+                                <li class="has-text-right"><strong>Marks
+                              Allocation - 2%</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="containerX right">
+                        <div data-aos="fade-up" class="box">
+                            <h2 class="title is-5
+                           has-text-centered">Final Presentation and Viva
+                            </h2>
+                            <h2 class="title is-6
+                           has-text-centered">November, 2020
+                            </h2>
+                            <p>Final evaluation of the completed product.
+                            </p>
+                            <ul>
+                                <li class="has-text-right"><strong>Marks
+                              Allocation - 20%</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features -->
+    <section id="features">
+        <div class="parallax">
+            <div class="parallax-container" style="min-height:100vh;">
+                <div class="notification is-dark">
+                    <h1 class="title has-text-white
+                     has-text-centered">What do we provide?
+                    </h1>
+                </div>
+                <div class="container center" style="min-height:70vh;">
+                    <div class="columns">
+                        <div class="column is-one-quarter">
+                            <div data-aos="flip-right" data-aos-duration="1000" class="notification
+                           is-danger
+                           has-text-centered" style="height:
+                           100%;">
+                                <h2 class="subtitle
+                              has-text-centered
+                              has-text-white">Virtual Assistant for Speech Impairments
+                                </h2>
+                                <br />
+                                <span class="icon
+                              has-text-centered">
+                           <i class="fas
+                              fa-project-diagram
+                              fa-4x"></i>
+                           </span>
+                                <br /> <br />
+                                <p class="has-text-centered">We are provide Voice output for speaking disabled students to communicate in a class room using SPEAK application .
+                                system.Our Application generate a speech output to express the direction , answer binary decision question, express the
+                                satisfaction and also generate a speech output to express the emotions..</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="parallax feature-background">
+        </div>
+    </section>
+    <!-- Document -->
+    <section id="documents" class="section">
+        <div class="container">
+            <h1 class="title has-text-centered
+               has-text-primary">Documents</h1>
+            <div class="has-text-centered" style="margin-top: 100px;
+               margin-bottom: 100px;">
+                <div class="notification is-primary">
+                    <p class="subtitle has-text-centered">
+                        Project Proposal
+                    </p>
+                </div>
+                <br>
+                <div class="columns is-multiline">
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Proposal Presentation
+                            </p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/1VJplFGaLcTB1ZJ57n-vEE8ZWxPKjAjbw/view?usp=share_link" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Proposal Document - IT19017716</p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/1JGQ6O7UbVLNQB3fh4wJmJ3zNqAtAuP2o/view?usp=share_link" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                            
+                        </div>
+                    </div>
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Proposal Document - IT19098760</p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/1TemW1rO6xzthq9IYWarL0XIcMV4gRO1H/view?usp=share_link" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Proposal Document - IT19176666</p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/1pT7vfr-NVm50v3rDPkESMvt1dA4e--oo/view?usp=share_link" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Proposal Document - IT19237978</p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/1xeWhxqvVGsZ7nQLEqvCjh0ryaYAHUn5f/view?usp=share_link" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="has-text-centered" style="margin-top: 100px;
+               margin-bottom: 100px;">
+                <div class="notification is-primary">
+                    <p class="subtitle has-text-centered">
+                        Status Document 01 and 02
+                    </p>
+                </div>
+                <br>
+                <div class="columns is-multiline">
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Status Document 1 - IT19017716</p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/1-B-IkP74eynZme069Y4bnm0O64yuiOCf/view?usp=share_link" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Status Document 1 - IT19176666</p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/1yXKnHHjjS6eubzqpsOsQ4MvAoE_ViIMf/view?usp=share_link" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column
+                                         is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Status Document 2 - IT19017716</p>
+                            <div class="card-image
+                                               has-text-centered"><span style="font-size: 5rem;
+                                               color:
+                                               rgb(193, 94, 93);"><i class="fa
+                                               fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                                               noreferrer" href="https://drive.google.com/file/d/1D0j2rVGnjx9o4WmUt34xJ-UInjplNxRL/view?usp=share_link" style="width: 100%;"><button
+                                        class="button
+                                               is-fullwidth
+                                               is-primary
+                                               is-outlined"><span class="icon"><i class="fas
+                                               fa-download" aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column
+                                         is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Status Document 2 - IT19176666</p>
+                            <div class="card-image
+                                               has-text-centered"><span style="font-size: 5rem;
+                                               color:
+                                               rgb(193, 94, 93);"><i class="fa
+                                               fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                                               noreferrer" href="https://drive.google.com/file/d/1y0kWQe2V1GmnohUxBvOZ9FpXokQZpZOr/view?usp=share_link" style="width: 100%;"><button
+                                        class="button
+                                               is-fullwidth
+                                               is-primary
+                                               is-outlined"><span class="icon"><i class="fas
+                                               fa-download" aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="has-text-centered" style="margin-top: 100px;
+               margin-bottom: 100px;">
+                <div class="notification is-primary">
+                    <p class="subtitle has-text-centered">
+                        Progress Presentation 01
+                    </p>
+                </div>
+                <br>
+                <div class="columns is-multiline">
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Progress Presentation 1
+                            </p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/17G8u6jOYBYccRiUfBVIVbGC3xTSenE60/view?usp=share_link" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="has-text-centered" style="margin-top: 100px;
+               margin-bottom: 100px;">
+                <div class="notification is-primary">
+                    <p class="subtitle has-text-centered">
+                        Research Paper
+                    </p>
+                </div>
+                <br>
+                <div class="columns is-multiline">
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Research Paper1
+                            </p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/13pPj9F9rDpmiIEXdPOq6b38AChHMO_H4/view?usp=share_link" style="width:
+                           100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column
+                                         is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Research Paper2</p>
+                            <div class="card-image
+                                               has-text-centered"><span style="font-size: 5rem;
+                                               color:
+                                               rgb(193, 94, 93);"><i class="fa
+                                               fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                                               noreferrer" href="https://drive.google.com/file/d/1t9Fk8K09RyrWk7icfbpg69-WOIRPWBSF/view?usp=share_link"
+                                    style="width: 100%;"><button class="button
+                                               is-fullwidth
+                                               is-primary
+                                               is-outlined"><span class="icon"><i class="fas
+                                               fa-download" aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="has-text-centered" style="margin-top: 100px;
+               margin-bottom: 100px;">
+                <div class="notification is-primary">
+                    <p class="subtitle has-text-centered">
+                        Progress Presentation 02
+                    </p>
+                </div>
+                <br>
+                <div class="columns is-multiline">
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Progress Presentation 02</p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                          rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/10T_v7Y2rXaqjrU6Ev1p1gEWzZ-NJ1YI8/view?usp=share_link" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Poster</p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/1m2TcFjX2u5a0AKYtyaAvh_sPhkn-5rYq/view?usp=share_link" style="width: 100%;"><button
+                           class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="has-text-centered" style="margin-top: 100px;
+               margin-bottom: 100px;">
+                <div class="notification is-primary">
+                    <p class="subtitle has-text-centered">
+                        Final Reports
+                    </p>
+                </div>
+                <br>
+                <div class="columns is-multiline">
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Final Report - Team
+                            </p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(41, 83, 148);"><i class="fa
+                           fa-file-word" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://docs.google.com/document/d/1gwPOScr32zR_G_Z838P5bjAeKBUnYTX-/edit?usp=share_link&ouid=111224948123385776668&rtpof=true&sd=true" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Final Report - IT19017716
+                            </p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(41, 83, 148);"><i class="fa
+                           fa-file-word" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://docs.google.com/document/d/11Uk2VZBpf0ExB_hi46Vyq8A6GjLzWndG/edit?usp=share_link&ouid=111224948123385776668&rtpof=true&sd=true" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Final Report - IT19098760
+                            </p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(41, 83, 148);"><i class="fa
+                           fa-file-word" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://docs.google.com/document/d/1LZoIA71ibWunru8CGPXz5xlbiEUpSbej/edit?usp=share_link&ouid=111224948123385776668&rtpof=true&sd=true" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Final Report - IT19176666
+                            </p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(41, 83, 148);"><i class="fa
+                           fa-file-word" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://docs.google.com/document/d/1qA7YMZc1MUrDb_ZRwLwxJqqrIOFL86FO/edit?usp=share_link&ouid=111224948123385776668&rtpof=true&sd=true" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Final Report - IT19237978
+                            </p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(41, 83, 148);"><i class="fa
+                           fa-file-word" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://docs.google.com/document/d/1QahQB4PM_fMtJQeg9QV6seMnB6MvkcuN/edit?usp=share_link&ouid=111224948123385776668&rtpof=true&sd=true" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="has-text-centered" style="margin-top: 100px;
+                               margin-bottom: 100px;">
+                    <div class="notification is-primary">
+                        <p class="subtitle has-text-centered">
+                            Log Book
+                        </p>
+                    </div>
+                    <br>
+                    <div class="columns is-multiline">
+                        <div class="column
+                                             is-one-quarter-desktop">
+                            <div data-aos="zoom-in" class="card">
+                                <p class="has-text-centered">Log Book IT19176666</p>
+                                <div class="card-image
+                                                   has-text-centered"><span style="font-size: 5rem;
+                                                   color:
+                                                  rgb(193, 94, 93);"><i class="fa
+                                                   fa-file-pdf" aria-hidden="true"></i></span></div>
+                                <footer class="card-footer"><a target="_blank" rel="noopener
+                                                   noreferrer" href="https://drive.google.com/file/d/1q2rotH3RkfgA44dQCKH-yh_XEjRKAx86/view?usp=share_link" style="width: 100%;"><button class="button
+                                                   is-fullwidth
+                                                   is-primary
+                                                   is-outlined"><span class="icon"><i class="fas
+                                                   fa-download" aria-hidden="true"></i></span><span>Download</span></button></a>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="column
+                                             is-one-quarter-desktop">
+                            <div data-aos="zoom-in" class="card">
+                                <p class="has-text-centered">Log Book IT19176666</p>
+                                <div class="card-image
+                                                   has-text-centered"><span style="font-size: 5rem;
+                                                   color:
+                                                   rgb(193, 94, 93);"><i class="fa
+                                                   fa-file-pdf" aria-hidden="true"></i></span></div>
+                                <footer class="card-footer"><a target="_blank" rel="noopener
+                                                   noreferrer" href="https://drive.google.com/file/d/1Wt999Y3wAjUoYf1LquOqQFH8Ym1TspRN/view?usp=share_link" style="width: 100%;"><button class="button
+                                                   is-fullwidth
+                                                   is-primary
+                                                   is-outlined"><span class="icon"><i class="fas
+                                                   fa-download" aria-hidden="true"></i></span><span>Download</span></button></a>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="has-text-centered" style="margin-top: 100px;
+               margin-bottom: 100px;">
+                <div class="notification is-primary">
+                    <p class="subtitle has-text-centered">
+                        Project Registration Documents
+                    </p>
+                </div>
+                <br>
+                <div class="columns is-multiline">
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Topic Assessment
+                            </p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/1vbh5nvpjIhEvUaFK3HhkBYXag71CDsoa/view?usp=share_link" style="width: 100%;"><button
+                           class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Project Cover Sheet
+                            </p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/1yrmACyDH-qUPl4PXvK3iE-cDS14Kn6Ed/view?usp=share_link" style="width: 100%;"><button
+                           class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column
+                     is-one-quarter-desktop">
+                        <div data-aos="zoom-in" class="card">
+                            <p class="has-text-centered">Project Charter Document
+                            </p>
+                            <div class="card-image
+                           has-text-centered"><span style="font-size: 5rem;
+                           color:
+                           rgb(193, 94, 93);"><i class="fa
+                           fa-file-pdf" aria-hidden="true"></i></span></div>
+                            <footer class="card-footer"><a target="_blank" rel="noopener
+                           noreferrer" href="https://drive.google.com/file/d/1yrmACyDH-qUPl4PXvK3iE-cDS14Kn6Ed/view?usp=share_link" style="width: 100%;"><button class="button
+                           is-fullwidth
+                           is-primary
+                           is-outlined"><span class="icon"><i class="fas
+                           fa-download"
+                           aria-hidden="true"></i></span><span>Download</span></button></a>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tools -->
+    <section id="tools">
+        <div class="parallax-tool">
+            <div class="parallax-container-tool" style="height: 100vh;">
+                <div class="notification is-dark">
+                    <h1 class="subtitle has-text-white
+                     has-text-centered">Tools and Technologies Used</h1>
+                </div>
+                <div class="container center" style="height:
+                  70vh;">
+                    <div class="container">
+                        <div class="columns is-mobile
+                        is-multiline">
+                            <div class="column
+                           notification-card
+                           is-one-fifth-desktop
+                           is-half-mobile">
+                                <a href="https://www.python.org/" target="_blank">
+                                    <div data-aos="flip-up" data-aos-duration="1000" class="notification
+                                 is-link
+                                 has-text-centered">Pyhton</div>
+                                </a>
+                            </div>
+                            <div class="column
+                           notification-card
+                           is-one-fifth-desktop
+                           is-half-mobile">
+                                <a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank">
+                                    <div data-aos="flip-up" data-aos-duration="1000" class="notification
+                                 is-link
+                                 has-text-centered">Flask</div>
+                                </a>
+                            </div>
+                            <div class="column
+                           notification-card
+                           is-one-fifth-desktop
+                           is-half-mobile">
+                                <a href="https://reactnative.dev/" target="_blank">
+                                    <div data-aos="flip-up" data-aos-duration="1000" class="notification
+                                 is-link
+                                 has-text-centered">React Native</div>
+                                </a>
+                            </div>
+                            <div class="column
+                           notification-card
+                           is-one-fifth-desktop
+                           is-half-mobile">
+                                <a href="https://developer.android.com/" target="_blank">
+                                    <div data-aos="flip-up" data-aos-duration="1000" class="notification
+                                 is-link
+                                 has-text-centered">Android</div>
+                                </a>
+                            </div>
+                            <div class="column
+                           notification-card
+                           is-one-fifth-desktop
+                           is-half-mobile">
+                                <a href="https://www.tensorflow.org/" target="_blank">
+                                    <div data-aos="flip-up" data-aos-duration="1000" class="notification
+                                 is-link
+                                 has-text-centered">TensorFlow</div>
+                                </a>
+                            </div>
+                            <div class="column
+                           notification-card
+                           is-one-fifth-desktop
+                           is-half-mobile">
+                                <a href="https://keras.io/" target="_blank">
+                                    <div data-aos="flip-up" data-aos-duration="1000" class="notification
+                                 is-link
+                                 has-text-centered">Keras</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="parallax-tool feature-background"></div>
+    </section>
+    
+    <!-- Team -->
+    <section id="team" class="team-background">
+        <br><br>
+        <h3 class="title has-text-centered has-text-white">Team</h3>
+        <div class="container">
+            <br><br>
+            <div class="columns">
+                <div class="column">
+                    <div data-aos="flip-right" data-aos-duration="1000" class="card
+                     has-text-centered" style="height: 100%;">
+                        <div class="card-image">
+                            <figure class="image is-4by3"><img src="images/PrasannaSir.png" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h1 class="has-text-centered
+                           is-4"><b>Prasanna Sumathipala</b>
+                            </h1>
+                            <p class="has-text-centered
+                           is-4">Supervisor</p>
+                            <br>
+                            <div class="buttons" style="width: 100%;justify-content: center;">
+                                <a href="https://www.linkedin.com/in/prasanna-sumathipala-42873624/?originalSubdomain=lk," target="_blank">
+                                    <button class="button">
+                           <span class="icon"><i class="fab fa-linkedin" aria-hidden="true"></i></span>
+                           </button>
+                                </a>
+                                <a href="mailto:prasanna.s@sliit.lk" target="_blank"><button
+                          class="button"><span class="icon"><i class="fas
+                          fa-envelope" aria-hidden="true"></i></span></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div data-aos="flip-right" data-aos-duration="1000" class="card
+                     has-text-centered" style="height: 100%;">
+                        <div class="card-image">
+                            <figure class="image is-4by3"><img src="images/LakminiMadam.jpg" alt="Placeholder image"></figure>
+                        </div>
+                        <div class="card-content">
+                            <h1 class="has-text-centered
+                           is-4"><b>Lakmini Abeywardhana</b>
+                            </h1>
+                            <p class="has-text-centered
+                           is-4">Co supervisor
+                            </p>
+                            <br>
+                            <div class="buttons" style="width: 100%;
+                           justify-content: center;"><a href="https://www.linkedin.com/in/lakmini-abeywardhana-65283aa9/?originalSubdomain=lk/" target="_blank"><button class="button"><span class="icon"><i class="fab
+                           fa-linkedin" aria-hidden="true"></i></span></button>
+                                <a href="mailto:lakmini.a@sliit.lk" target="_blank"><button
+                            class="button"><span class="icon"><i class="fas
+                            fa-envelope" aria-hidden="true"></i></span></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div data-aos="flip-right" data-aos-duration="1000" class="card
+                     has-text-centered" style="height: 100%;">
+                        <div class="card-image">
+                            <figure class="image is-4by3"><img src="images/Jinendra.jpeg" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h1 class="has-text-centered
+                           is-4"><b>Jinendra Bogahawatta</b>
+                            </h1>
+                            <p class="has-text-centered
+                           is-4">Group Leader</p>
+                            <br>
+                            </div>
+                        </div>
+                </div>
+                <div class="column">
+                    <div data-aos="flip-right" data-aos-duration="1000" class="card
+                     has-text-centered" style="height: 100%;">
+                        <div class="card-image">
+                            <figure class="image is-4by3"><img src="images/Heshiki.jpg" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h1 class="has-text-centered
+                           is-4"><b>Heshiki Halpe</b>
+                            </h1>
+                            <p class="has-text-centered
+                           is-4">Member</p>
+                            <br>
+                            <div class="buttons" style="width: 100%;
+                           justify-content: center;"><a href="http://www.linkedin.com/in/nishitha-de-silva" target="_blank"><button class="button"><span class="icon"><i class="fab
+                           fa-linkedin" aria-hidden="true"></i></span></button></a>
+                                <a href="mailto:it19017716@my.sliit.lk" target="_blank"><button
+                            class="button"><span class="icon"><i class="fas
+                            fa-envelope" aria-hidden="true"></i></span></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div data-aos="flip-right" data-aos-duration="1000" class="card
+                                     has-text-centered" style="height: 100%;">
+                        <div class="card-image">
+                            <figure class="image is-4by3"><img src="images/Sanduni.jpeg" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h1 class="has-text-centered
+                                           is-4"><b>Sanduni Disanayaka</b>
+                            </h1>
+                            <p class="has-text-centered
+                                           is-4">Member</p>
+                            <br>
+                            <div class="buttons" style="width: 100%;
+                                           justify-content: center;"><a href="https://www.linkedin.com/in/sanduni-disanayaka-3073b1240/?originalSubdomain=lk"
+                                    target="_blank"><button class="button"><span class="icon"><i class="fab
+                                           fa-linkedin" aria-hidden="true"></i></span></button></a>
+                                <a href="mailto:it19098760@my.sliit.lk" target="_blank"><button class="button"><span
+                                            class="icon"><i class="fas
+                                            fa-envelope" aria-hidden="true"></i></span></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div data-aos="flip-right" data-aos-duration="1000" class="card
+                     has-text-centered" style="height: 100%;">
+                        <div class="card-image">
+                            <figure class="image is-4by3"><img src="images/Prabodha.jpeg" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h1 class="has-text-centered
+                           is-4"><b>Prabodha Sathsarani</b>
+                            </h1>
+                            <p class="has-text-centered
+                           is-4">Member</p>
+                            <br>
+                            <div class="buttons" style="width: 100%;
+                           justify-content: center;"><a href="https://www.linkedin.com/in/prabodhasa/" target="_blank"><button class="button"><span class="icon"><i class="fab
+                           fa-linkedin" aria-hidden="true"></i></span></button></a><span class="icon">
+                                <a href="mailto:it19176666@my.sliit.lk" target="_blank"><button
+                            class="button"><span class="icon"><i class="fas
+                            fa-envelope" aria-hidden="true"></i></span></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact US -->
+</body>
+
+</html>
